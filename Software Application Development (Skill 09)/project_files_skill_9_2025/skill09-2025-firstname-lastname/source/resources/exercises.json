@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Barbell Squat",
+    "description": "Place the barbell on your upper back, squat down by bending your knees and hips, then return to standing.",
+    "type": "barbell"
+  },
+  {
+    "name": "Dumbbell Shoulder Press",
+    "description": "Hold a dumbbell in each hand at shoulder height and press them overhead.",
+    "type": "dumbbell"
+  },
+  {
+    "name": "Cable Tricep Pushdown",
+    "description": "Grip the cable attachment and push down until your arms are fully extended. 💪",
+    "type": "cable"
+  },
+  {
+    "name": "Lég Press Machine",
+    "description": "Sit on the machine and push the platform away using your legs.",
+    "type": "machine"
+  },
+  {
+    "name": "Barbell Deadlift",
+    "description": "Lift the barbell from the ground to a standing position using your legs and back.",
+    "type": "barbell"
+  },
+  {
+    "name": "Dumbbell Bizeps Cürl",
+    "description": "Hold a dumbbell in each hand and curl them towards your shoulders.",
+    "type": "dumbbell"
+  },
+  {
+    "name": "Cable Lateral Raise",
+    "description": "Use a cable machine to lift your arms out to the sides.",
+    "type": "cable"
+  },
+  {
+    "name": "Chest Press Machine",
+    "description": "Push the handles of the machine forward to work your chest. 🏋️‍♂️",
+    "type": "machine"
+  },
+  {
+    "name": "Barbell Bent-Over Rów",
+    "description": "Bend at your waist and pull the barbell towards your torso.",
+    "type": "barbell"
+  },
+  {
+    "name": "Dumbbell Lunges",
+    "description": "Hold a dumbbell in each hand and step forward into a lunge.",
+    "type": "dumbbell"
+  },
+  {
+    "name": "Cable Face Pulls",
+    "description": "Pull the cable attachment towards your face to engage rear delts. 🤜",
+    "type": "cable"
+  },
+  {
+    "name": "Lat Pulldown Machine",
+    "description": "Pull the bar down towards your chest to work your back.",
+    "type": "machine"
+  },
+  {
+    "name": "Barbell Overhead Press",
+    "description": "Press a barbell overhead while standing.",
+    "type": "barbell"
+  },
+  {
+    "name": "Dumbbell Deadlift",
+    "description": "Lift dumbbells from the floor to a standing position.",
+    "type": "dumbbell"
+  },
+  {
+    "name": "Cable Séated Row",
+    "description": "Pull the cable attachment towards your torso while seated.",
+    "type": "cable"
+  },
+  {
+    "name": "Lëg Curl Machine",
+    "description": "Curl the weight by flexing your knees.",
+    "type": "machine"
+  },
+  {
+    "name": "Barbell Hip Thrust",
+    "description": "Place your shoulders on a bench and thrust your hips up with a barbell.",
+    "type": "barbell"
+  },
+  {
+    "name": "Dumbbell Step-Ups",
+    "description": "Step onto a bench while holding dumbbells.",
+    "type": "dumbbell"
+  },
+  {
+    "name": "Cable Chest Fly",
+    "description": "Pull the cable handles together in front of your chest.",
+    "type": "cable"
+  },
+  {
+    "name": "Hack Squat Machine",
+    "description": "Squat using a machine-guided movement.",
+    "type": "machine"
+  }
+]
