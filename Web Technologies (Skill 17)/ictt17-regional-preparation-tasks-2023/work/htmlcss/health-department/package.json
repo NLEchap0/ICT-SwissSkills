@@ -1,0 +1,18 @@
+{
+  "name": "health-department",
+  "version": "1.0.0",
+  "description": "HTMLCSS task for STRING_COMPETITION STRING_YEAR — STRING_TRADE — STRING_TITLE",
+  "scripts": {
+    "start": "skills17-cypress open --browser chrome",
+    "test": "skills17-cypress run  --browser chrome --headless",
+    "test:json": "skills17-cypress run --quiet --browser chrome --headless --json"
+  },
+  "keywords": [],
+  "author": "STRING_AUTHOR",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@skills17/cypress-helpers": "^4.0.0",
+    "cypress": "^9.2.0"
+  }
+}

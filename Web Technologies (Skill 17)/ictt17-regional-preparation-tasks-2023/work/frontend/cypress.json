@@ -1,0 +1,5 @@
+{
+    "watchForFileChanges": true,
+    "screenshotOnRunFailure": false,
+    "video": false
+}

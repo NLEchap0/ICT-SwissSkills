@@ -1,0 +1,169 @@
+:root {
+    --digit-width: 7rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+main {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+.container {
+    max-width: 90%;
+    max-height: 90%;
+
+    flex-shrink: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5%;
+}
+
+/* Digit sizing */
+.digit {
+    width: var(--digit-width);
+    flex-shrink: 1;
+    aspect-ratio: 1 / 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.digit .stroke {
+    color: white;
+}
+.colon {
+    color: white;
+}
+
+/* Horizontal stroke positioning and sizing */
+.digit .stroke.stroke-horizontal {
+    width: calc(100% / 5 * 4);
+    aspect-ratio: 7 / 1;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Horizontal vertical positioning and sizing */
+.digit .stroke-vertical-wrapper {
+    height: 50%;
+    aspect-ratio: 1 / 1;
+
+    margin-top: calc(-100% / 49 * 6);
+    margin-bottom: calc(-100% / 49 * 6);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.digit .stroke.stroke-vertical {
+    height: calc(100% / 5 * 4);
+    aspect-ratio: 1 / 7;
+}
+
+/* Colon positioning and sizing */
+.colon {
+    position: relative;
+
+    width: calc(var(--digit-width) / 5 * 4 / 7);
+    aspect-ratio: 1 / 4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.colon .dot {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+/* Off/On classes */
+.digit .stroke,
+.colon .dot {
+    opacity: 0;
+}
+
+.digit .stroke.on,
+.colon .dot.on {
+    opacity: 1;
+}
+
+/* Buttons styling */
+.buttons {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.buttons .button {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    border: 0;
+    border-radius: 0.375rem;
+
+    font-size: 1rem;
+
+    transition: all 150ms ease;
+
+    background-color: #E2E8F0;
+    color: black;
+
+    cursor: pointer;
+}
+.buttons .button:hover {
+    background-color: #CBD5E0;
+}
+.buttons .button:active {
+    background-color: #A0AEC0;
+}
+
+.buttons .button.button--primary {
+    background-color: #3182ce;
+    color: white;
+}
+.buttons .button.button--primary:hover {
+    background-color: #2b6cb0;
+}
+.buttons .button.button--primary:active {
+    background-color: #2c5282;
+}
+
+.buttons .button.button--error {
+    background-color: #E53E3E;
+    color: white;
+}
+.buttons .button.button--error:hover {
+    background-color: #C53030;
+}
+.buttons .button.button--error:active {
+    background-color: #9B2C2C;
+}

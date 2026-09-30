@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<!-- Finestra con tutti i template (solo nomi; il dettaglio sta nell'editor). -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="athlitrack.controller.TemplatesController"
+      spacing="8" styleClass="view" stylesheets="@app.css">
+    <Label text="Templates" styleClass="view-title"/>
+    <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Name" prefWidth="400">
+                <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <HBox spacing="8">
+        <Button text="Add" onAction="#onAdd"/>
+        <Button text="Edit" onAction="#onEdit"/>
+        <Button text="Delete" onAction="#onDelete"/>
+    </HBox>
+</VBox>

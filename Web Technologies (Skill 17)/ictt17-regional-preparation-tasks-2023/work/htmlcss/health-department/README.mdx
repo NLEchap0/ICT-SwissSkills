@@ -1,0 +1,86 @@
+import { Highlight } from "@skills17/competitor-readme";
+
+# Task 2 - Building a health department website
+
+Your second task is to understand the existing resources and finish the work of creating the layout for a health department website in pure HTML and CSS.
+
+For this task, the designer has provided you some UI designs and specifications:
+
+- [Final design](http://localhost/material/health-department-final.png)
+- [Spacing](http://localhost/material/health-department-spacings.png)
+
+**Fonts**
+
+_Should be applied to `<body>`_
+
+|        |           |
+| ------ | --------- |
+| Family | Helvetica |
+| Size   | 13px      |
+| Color  | #454545   |
+
+**Special Typography stylings**
+
+|                         |                                                                      |
+| ----------------------- | -------------------------------------------------------------------- |
+| logo h1                 | size: 14px, weight: 700, color: #000                                 |
+| service links in header | size: 11px                                                           |
+| h2                      | size: 16px, weight: 400, height: 30px, border-bottom: 2px solid #ccc |
+| h3                      | size: 16px, weight: 400, color: #069                                 |
+| h4                      | size: 15px, weight: 400, color: #069                                 |
+| footer link             | color: #069                                                          |
+
+## Additional requirements
+
+1. `<body>` background is striped image (background.png)
+1. `.content` background is white
+1. `.content` is 8.75/10 width of `<body>`
+1. `.content` has a 60% black opacity box shadow with 0 offset & spread but 60px blur
+1. `.breadcrumb` should be solved without modifying the html and only using borders
+1. Search `<input>` has 4px border radius & 1px solid #ccc
+1. `<nav>` has 5px solid #dc0018 border on the top
+1. Nav items are 70px high, have 1px solid #b8b8b8 borders on the side and are all aligned on same horizontal axis
+1. `.left` panel is 3/4 width of the `<section>` (minus spacing)
+1. `.right` panel is 1/4 width of the `<section>` (minus spacing)
+1. `.article` are all are aligned on same horizontal axis
+1. `.media` articles have a 1px solid #ccc **bottom** border between them
+
+**All required image assets are provided in `src/assets`**
+
+## HTML and CSS files
+
+Feel free to modify and extend the **CSS** code to your needs.
+
+You can also extend the **HTML** code by adding new attributes or elements,
+but make sure you **don't delete** existing elements and attributes.
+Otherwise, the tests we will use for scoring may fail.
+
+Use the HTML and CSS files provided in the `work/htmlcss/health-department/src` folder.
+**Do not create or modify any files outside of this directory for this task.**
+
+| Description | File                                                                                                     |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| HTML file   | [src/health-department.html](http://localhost/work/htmlcss/health-department/src/health-department.html) |
+| CSS file    | [src/health-department.css](http://localhost/work/htmlcss/health-department/src/health-department.css)   |
+
+<Highlight type="error">
+  * The use of JavaScript is not allowed. <br />
+  * It must work in the provided versionof Google Chrome. <br />
+  * You are not allowed to modify any files outside
+  of`work/htmlcss/health-department/src/` in any way <br />
+</Highlight>
+
+## Scoring
+
+For scoring, we will use automated End-to-End tests to verify that the functionality works as expected.
+You can also run the same tests that we will use to verify your score.
+
+To run the tests, open a terminal and `cd` into the `work/htmlcss/health-department` directory.
+Then, execute the following command in your terminal:
+
+- `npm run start`
+- wait for cypress to start (it might take a bit of time initially)
+- select the `health-department.spec.js`-testsuite
+- a chrome window will open and the tests will run
+- click the "Run all tests"-Button or reload the page to rerun the test
+- select or hover over a test or assertion in the left sidebar to see the HTML at that specific point in time

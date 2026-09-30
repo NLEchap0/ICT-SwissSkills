@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<!-- Modale mostrata creando un workout: pre-compila da template oppure parti vuoto. -->
+<!-- Se non ci sono template, il controller nasconde la lista e mostra solo il messaggio. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="athlitrack.controller.TemplatePickerController"
+      spacing="8" prefWidth="360" prefHeight="300"
+      styleClass="view" stylesheets="@app.css">
+    <Label fx:id="message" text="Select a template to pre-fill exercises:" wrapText="true"/>
+    <ListView fx:id="list" VBox.vgrow="ALWAYS"/>
+    <HBox spacing="8">
+        <Button fx:id="useButton" text="Use template" defaultButton="true" onAction="#onUseTemplate"/>
+        <Button text="Start empty" onAction="#onStartEmpty"/>
+    </HBox>
+</VBox>

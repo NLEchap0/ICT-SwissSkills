@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: timer
+metadata:
+  name: Timer
+localHistory: true
+groups:
+- match: Interval .*
+  displayName: Interval
+  tests:
+  - match: can instantiate an interval
+    points: 0.5
+  - match: can start an interval
+    points: 0.5
+  - match: can pause an interval
+    points: 0.5
+  - match: can continue an interval
+    points: 0.5
+  - match: can call the callback with the correct number of milliseconds since the last call
+    points: 0.5
+  - match: can continue an interval at the correct millisecond
+    points: 2
+- match: Digit .*
+  displayName: Digit
+  tests:
+  - match: can instantiate a digit
+    points: 0.25
+  - match: can set a digit's value after instantiating
+    points: 0.25
+  - match: throws an error when an invalid value is set
+    points: 0.25
+  - match: can set a digit's strokes to display the number \d
+    points: 0.25
+  - match: can update the strokes when setting a digit\'s value after instantiating
+    points: 0.5
+- match: Clock .*
+  displayName: Clock
+  tests:
+  - match: can instantiate a clock
+    points: 0.25
+  - match: can set a clock's milliseconds after instantiating
+    points: 0.5
+  - match: can add milliseconds to a clock
+    points: 0.25
+  - match: can subtract milliseconds from a clock
+    points: 0.25
+  - match: throws an error when a negative number of milliseconds is set
+    points: 0.25
+  - match: can set each digit of a clock initially
+    points: 1
+  - match: can calculate seconds from milliseconds
+    points: 0.5
+  - match: can calculate modulo seconds from milliseconds
+    points: 0.5
+  - match: can calculate floored minutes from milliseconds
+    points: 0.5
+  - match: can set each digit of a clock according to the total number of milliseconds
+    points: 0.5
+- match: Timer .*
+  displayName: Timer
+  tests:
+  - match: can instantiate a timer
+    points: 0.25
+  - match: throws an error when a negative number of milliseconds is set
+    points: 0.25
+  - match: can start a timer
+    points: 0.25
+  - match: can pause a timer
+    points: 0.25
+  - match: can continue a timer
+    points: 0.25
+  - match: stops a timer when it finishes
+    points: 0.5
+  - match: calls the finish callback when the timer finishes
+    points: 0.5
+  - match: can reset a timer after it finished
+    points: 0.5
+  - match: can reset a timer and does not continue counting afterwards
+    points: 0.5
+- match: Main .*
+  displayName: Main
+  tests:
+  - match: can view an initialized timer
+    points: 1
+  - match: can start a timer
+    points: 0.5
+  - match: can pause a timer
+    points: 0.5
+  - match: can continue a timer
+    points: 0.5
+  - match: can reset a timer
+    points: 0.5
+  - match: can correctly show and hide the buttons
+    points: 1

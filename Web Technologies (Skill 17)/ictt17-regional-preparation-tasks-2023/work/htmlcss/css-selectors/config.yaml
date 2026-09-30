@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: css-selectors
+metadata:
+  name: CSS Selectors
+  testsLink: http://localhost/work/htmlcss/css-selectors/tests.html
+serve:
+  enabled: true
+localHistory: true
+source:
+- src/task.css
+groups:
+- match: CSS Selectors.+
+  displayName: CSS Selectors

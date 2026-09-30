@@ -1,0 +1,98 @@
+import { Highlight } from '@skills17/competitor-readme';
+
+# Task - Timer
+
+The goal of the task is to create a JavaScript implementation of a *Timer*.
+The code structure and the [user interface](http://localhost/work/frontend) are already provided,
+and your goal is to implement the body of the methods in the files in the `work/frontend/src/` folder as specified.
+
+To be more efficient, it is recommended to reuse your code in the given classes as much as possible, however, you are not technically required to do so.
+
+## General Information
+
+In this part, you will prove your JavaScript programming skills.
+Therefore, you will modify several prepared JavaScript files.
+Your working space is the folder `work/frontend/src/`.
+
+<Highlight type="error">
+  You can only change or create new files under `work/frontend/src/`.
+  All other files will be reverted for the review process.
+</Highlight>
+
+## Requirements
+
+As a sub-feature of an application you are asked to implement a timer.
+On a digital clock consisting of HTML elements, the timer should display minutes and seconds in the format `mm:ss`.
+
+After pressing "Start", the timer should count down to zero starting from the given time.
+
+![Timer](./readme/timer.png)
+
+At any point of time, the user should be able to pause and resume the timer.
+
+No matter whether the timer is paused or not, pressing "Reset" should pause it and reset it to the starting time.
+
+### Modules
+
+To keep the code reusable and expandable, it should be split into the following modules.
+
+<Highlight type="info">
+  It is suggested to implement the modules in this given order so it is possible to reuse code in other modules.
+</Highlight>
+
+**Interval** - `work/frontend/src/interval.js`
+- Can be used to call a function at a given interval. It includes pausing and resuming functionality.
+
+**Digit** - `work/frontend/src/digit.js`
+- Controls the HTML elements of a single digit.
+
+**Clock** - `work/frontend/src/clock.js`
+- Connects multiple digits to form a visual representation of a digital clock.
+
+**Timer** - `work/frontend/src/timer.js`
+- Connects all other modules to form a fully functional timer.
+
+**Main** - `work/frontend/src/main.js`
+- The main script is used to bring interactability to the timer. It hooks up buttons to their corresponding timer functions.
+
+## Working Directory
+
+<Highlight type="info">
+  The working directory is located in `work/frontend/src/`.
+
+  You may only change the files and add all the JavaScript functionality within in that folder.
+
+  Also make sure to check the header of each file for notes on what you may or may not change.
+</Highlight>
+
+<Highlight type="error">
+  For reviewing your work, unit tests are used.
+  So be sure that you are executing the unit tests at some point to verify your progress.
+
+  Please note that these behaviors are considered as cheating and will give you 0 points for the whole frontend task:
+  * It is forbidden to change the content of the test files.
+  * It is forbidden to return static results (only make it work for the exact same situations that the one described in the tests).
+</Highlight>
+
+## Expected Result
+
+You have implemented all the methods marked with `@todo` in `work/frontend/src`,
+and all tests in the test suite are passing.
+
+### Running the Tests
+
+All tests are located in `work/frontend/cypress/integration`. You can look at them to see what is expected to happen but you are not allowed to change them in any way.
+
+You may run the tests in two ways:
+
+**Interactively** - `npm start`
+  - Starts an **interactive test runner** that let's you select which tests to run and gives you extensive feedback on the tests' results.
+  - Wait for cypress to start (it might take a bit of time initially)
+  - Select the testsuite for the module you want to test
+  - A chrome window will open and the tests will run
+  - Click the "Run all tests"-Button or reload the page to rerun the test
+  - Select or hover over a test or assertion in the left sidebar to see the website at that specific point in time
+
+**In your Terminal** - `npm test`
+  - Runs all the tests in your terminal, gives you feedback on their results and let's you know **how many points you have earned**.
+  - `npm test -- --spec "cypress/integration/digit.spec.js"` allows you to only run the specified test file.

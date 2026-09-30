@@ -1,0 +1,21 @@
+{
+    "name": "skills17/backend",
+    "description": "Backend task for STRING_COMPETITION STRING_YEAR - STRING_TRADE - STRING_TITLE",
+    "type": "project",
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "php -S localhost:4000 src-php/Lib/DevServer.php"
+    },
+    "authors": [
+        {
+            "name": "STRING_AUTHOR",
+            "email": "hello@skills17.ch"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Skills17\\": "src-php/"
+        }
+    },
+    "require": {}
+}

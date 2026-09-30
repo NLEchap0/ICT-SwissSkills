@@ -1,0 +1,23 @@
+{
+  "name": "css-selectors",
+  "version": "1.0.0",
+  "description": "HTMLCSS task for STRING_COMPETITION STRING_YEAR — STRING_TRADE — STRING_TITLE",
+  "scripts": {
+    "test": "karma start",
+    "test:json": "karma start --reporters skills17-json"
+  },
+  "keywords": [],
+  "author": "STRING_AUTHOR",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@skills17/karma-helpers": "^2.0.0",
+    "@skills17/mocha-web-helpers": "^2.0.0",
+    "chai": "^4.3.4",
+    "karma": "^6.3.9",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-mocha": "^2.0.1",
+    "mocha": "^8.4.0"
+  }
+}

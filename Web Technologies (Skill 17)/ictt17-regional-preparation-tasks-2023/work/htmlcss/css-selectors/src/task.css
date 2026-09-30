@@ -1,0 +1,35 @@
+/**
+ * STRING_COMPETITION STRING_YEAR - STRING_TRADE - STRING_TITLE
+ * HTMLCSS - Task 1 - CSS Selectors
+ *
+ * Your task is to expand all CSS Selectors marked with @todo.
+ * You are not allowed to add additional Selectors.
+ */
+
+#task-0 #programmer {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}
+
+#task-1 /* @todo */ {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}
+
+#task-2 /* @todo */ {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}
+
+#task-3 /* @todo */ {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}
+
+#task-4 /* @todo */ {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}
+
+#task-5 /* @todo */ {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}
+
+#task-6 /* @todo */ {
+  box-shadow: 0 0 0 5px gold, 0 0 10px 5px orange;
+}

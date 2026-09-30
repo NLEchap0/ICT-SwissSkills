@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: health-department
+metadata:
+  name: Health Department
+serve:
+  enabled: true
+  port: 8080
+localHistory: true
+groups:
+  - match: Health Department.+
+    displayName: Health Department

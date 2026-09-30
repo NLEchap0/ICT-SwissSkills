@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+}
+
+body {
+  margin: 1rem auto;
+  max-width: 1500px;
+  padding: 25px;
+}
+
+h1,
+h2 {
+  font-size: 18px;
+}
+
+h2 {
+  margin-top: 1rem;
+}
+
+p,
+ul,
+li {
+  font-size: 16px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  padding: 2px 4px;
+}
+
+section {
+  font-size: 1.5rem;
+}
+
+#task-5 > section {
+  font-size: 2rem;
+}
+
+article,
+section {
+  display: flex;
+  align-items: center;
+  min-height: 0;
+}
+
+article {
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 25px;
+  border: 5px dashed #eeeeee;
+  justify-content: center;
+}
+
+section,
+div {
+  flex: 0 0 auto;
+}
+
+section {
+  border: 2px solid #f6c5ba;
+  border-radius: 0.1em;
+  padding: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: center;
+}
+
+div,
+object,
+.covid {
+  background-image: url(./covid-virus-outline.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #82baff;
+  border-radius: 0.1em;
+  height: 2rem;
+  width: 2rem;
+  margin: 5px;
+}
+
+.virus,
+#virus {
+  background-image: url(./covid-virus.svg);
+}
+
+.sanitizer,
+#sanitizer {
+  background-image: url(./covid-sanitizer.svg);
+}
+
+.vaccine,
+#vaccine {
+  background-image: url(./covid-vaccine.svg);
+}
+
+[data-target] {
+  background-image: url(./covid-programmer.svg);
+}

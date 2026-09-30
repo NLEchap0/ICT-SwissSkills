@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<!-- "Aggiungi template" / "Modifica template ...": nome + righe esercizio ordinate. -->
+<!-- Il form sotto la tabella serve sia per aggiungere che per aggiornare la riga selezionata. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="athlitrack.controller.TemplateEditorController"
+      spacing="8" styleClass="view" stylesheets="@app.css">
+    <Label fx:id="title" text="Add template" styleClass="view-title"/>
+    <Label text="Name:"/>
+    <TextField fx:id="nameField"/>
+    <Label text="Exercises in this template:"/>
+    <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Exercise" prefWidth="300">
+                <cellValueFactory><PropertyValueFactory property="exerciseName"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Sets" prefWidth="100">
+                <cellValueFactory><PropertyValueFactory property="sets"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Reps per set" prefWidth="130">
+                <cellValueFactory><PropertyValueFactory property="reps"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <GridPane hgap="8" vgap="6">
+        <Label text="Exercise:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <ComboBox fx:id="exerciseBox" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Sets:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Spinner fx:id="setsSpinner" prefWidth="80" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+        <Label text="Reps:" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+        <Spinner fx:id="repsSpinner" prefWidth="80" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+        <Button text="Add exercise" onAction="#onAddRow" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Button text="Update selected" onAction="#onUpdateRow" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="Remove" onAction="#onRemoveRow" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    </GridPane>
+    <HBox spacing="8">
+        <Button text="Move up" onAction="#onMoveUp"/>
+        <Button text="Move down" onAction="#onMoveDown"/>
+    </HBox>
+    <Label fx:id="error" styleClass="error-label" wrapText="true"/>
+    <HBox spacing="8">
+        <Button text="Save" defaultButton="true" onAction="#onSave"/>
+        <Button text="Cancel" cancelButton="true" onAction="#onCancel"/>
+    </HBox>
+</VBox>

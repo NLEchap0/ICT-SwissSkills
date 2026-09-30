@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://schema.skills17.ch/task-config/v3/config.schema.json
+id: backend
+metadata:
+  name: Paste API
+serve:
+  bind: localhost
+  port: 4000
+localHistory: true
+groups:
+  - match: regio-skills-backend(-extra)? > /api > /paste > GET /:access_token > .+
+    displayName: GET /api/paste/:access_token
+    defaultPoints: 0.25
+    tests:
+      - match: existing paste > response loose
+        points: 1
+      - match: expired paste > response
+        points: 0.5
+      - match: non-existing-paste > response
+        points: 0.5
+  - match: regio-skills-backend(-extra)? > /api > /paste > POST / > .+
+    displayName: POST /api/paste
+    defaultPoints: 0.25
+    tests:
+      - match: full body > response loose
+        points: 1
+  - match: regio-skills-backend(-extra)? > /api > /paste > DELETE /:access_token > .+
+    displayName: DELETE /api/paste/:access_token
+    defaultPoints: 0.25
+  - match: regio-skills-backend(-extra)? > /api > /paste > POST /:access_token/fork > .+
+    displayName: POST /api/paste/:access_token/fork
+    defaultPoints: 0.25
+    tests:
+      - match: existing paste > response loose
+        points: 1
+      - match: with expiration > response loose
+        points: 0.5
+  - match: regio-skills-backend(-extra)? > /api > /paste > PUT /:access_token > .+
+    displayName: PUT /api/paste/:access_token
+    defaultPoints: 0.25
+    tests:
+      - match: existing paste > response loose
+        points: 1
+  - match: regio-skills-backend(-extra)? > /api > /paste > PATCH /:access_token > .+
+    displayName: PATCH /api/paste/:access_token
+    defaultPoints: 0.25
+    tests:
+      - match: existing paste > response loose
+        points: 1
+  - match: regio-skills-backend(-extra)? > generic > .+
+    displayName: Generic
+    defaultPoints: 0.25

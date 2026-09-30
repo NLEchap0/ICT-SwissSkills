@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="744e058a-f1f9-4eb0-8a8d-873edf5c9a4e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/competition_skill9_2025.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/documents/Skill09_general-description.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/documents/application_structure.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/documents/exercises.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/documents/wireframes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/.idea/skill09-2025-bryan-ciaponi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/competitor.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/src/main/java/ch/athlitrack/athlitrack/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/src/main/java/ch/athlitrack/athlitrack/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TRY_______project_files_skill_9_2025/skill09-2025-bryan-ciaponi/source/AthliTrack/src/main/resources/ch/athlitrack/athlitrack/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/competition_skill9_2025.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/documents/Skill09_general-description.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/documents/application_structure.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/documents/exercises.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/documents/wireframes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/competitor.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/skill09-2025-firstname-lastname.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/libraries/sqlite_jdbc_3_46_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/libraries/src.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/db/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/db/ExerciseDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/db/TemplateDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/db/WorkoutDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/Exercise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/ExerciseProgress.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/Template.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/TemplateItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/Workout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/WorkoutExercise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/model/WorkoutSet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/ui/ExerciseDialog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/ui/SetRow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/ui/TemplateItemRow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/ui/TemplatesWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/out/production/skill09-2025-firstname-lastname/com/athlitrack/ui/UiUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/resources/db/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/resources/exercises.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/skill09-2025-firstname-lastname.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/db/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/db/DbInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/db/ExerciseDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/db/TemplateDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/db/WorkoutDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/Exercise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/ExerciseProgress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/Template.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/TemplateItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/Workout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/WorkoutExercise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/model/WorkoutSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/ExerciseDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/ExercisesWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/MainWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/SetRow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/TemplateEditorWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/TemplateItemRow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/TemplatesWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/UiUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/src/com/athlitrack/ui/WorkoutTemplateDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-console-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-multibyte-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-private-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/decora_sse.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/fxplugins.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/glass.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/glib-lite.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/gstreamer-lite.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/javafx_font.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/javafx_iio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/jfxmedia.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/jfxwebkit.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/msvcp140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/msvcp140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/msvcp140_2.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/prism_common.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/prism_d3d.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/prism_sw.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/ucrtbase.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/vcruntime140.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/bin/vcruntime140_1.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.base/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.base/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.controls/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.controls/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.fxml/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.fxml/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.graphics/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.graphics/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.graphics/jpeg_fx.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.graphics/mesa3d.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/directshow.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/glib.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/gstreamer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.media/libffi.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.swing/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.swing/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/icu_web.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/libxml2.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/libxslt.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/legal/javafx.web/webkit.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx-swt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.base.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.controls.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.fxml.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.graphics.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.media.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.swing.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/lib/javafx.web.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/javafx-sdk-21.0.5/src.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../project_files_skill_9_2025/skill09-2025-firstname-lastname/source/tools/sqlite-jdbc-3.46.1.0.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3K2Ni2h3ImSa38XOOSM1MEYkeCt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Scuola/Anno_4/ICT-SwissSkills/Software Application Development (Skill 09)/project_files_skill_9/skill09-2025-bryan-ciaponi/source&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="744e058a-f1f9-4eb0-8a8d-873edf5c9a4e" name="Changes" comment="" />
+      <created>1790751826490</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790751826490</updated>
+      <workItem from="1790751827795" duration="3751000" />
+      <workItem from="1790758841435" duration="28000" />
+      <workItem from="1790758940860" duration="61000" />
+      <workItem from="1790759023983" duration="138000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

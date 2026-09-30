@@ -1,0 +1,2184 @@
+{
+	"info": {
+		"_postman_id": "b36feb21-8118-471e-9edb-3d8875bdf65c",
+		"name": "regio-skills-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generic",
+			"item": [
+				{
+					"name": "not-found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('status', () => {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"pm.test('response', () => {",
+									"    pm.expect(pm.response.json()).is.to.eql({error: \"Not found\"}); ",
+									"});",
+									"pm.test(\"content-type\", () => {",
+									"  pm.expect(pm.response.headers.get('Content-Type').startsWith('application/json')).to.be.true;",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/random-inexisting-path",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"random-inexisting-path"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/api",
+			"item": [
+				{
+					"name": "/paste",
+					"item": [
+						{
+							"name": "GET /:access_token",
+							"item": [
+								{
+									"name": "existing paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).is.equal('8103108a-a837-4b76-865f-d60948362a0a', 'id not as expected');",
+													"    pm.expect(responseJson.content).is.equal('blabb\\r\\nblubb\\r\\nblobb\\r\\n', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).is.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).is.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).is.equal('test title', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).is.equal('dd4a3f94-5cfe-461f-b0dd-0879b76af109', 'access_token not as expected');",
+													"    pm.expect(responseJson).to.not.have.own.property('edit_token');",
+													"",
+													"    // loose checks",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).is.equal('8103108a-a837-4b76-865f-d60948362a0a', 'id not as expected');",
+													"    pm.expect(responseJson.content).is.equal('blabb\\r\\nblubb\\r\\nblobb\\r\\n', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).is.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).is.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).is.equal('test title', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).is.equal('dd4a3f94-5cfe-461f-b0dd-0879b76af109', 'access_token not as expected');",
+													"    pm.expect(responseJson).to.not.have.own.property('edit_token');",
+													"",
+													"    // strict checks",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.expiration, '2032-01-31T21:59:35.000Z')).is.equal(true, 'expiration not as expected');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.created_at, '2022-01-07T21:59:35.000Z')).is.equal(true, 'created_at not as expected');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.updated_at, '2022-01-07T21:59:35.000Z')).is.equal(true, 'updated_at not as expected');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/dd4a3f94-5cfe-461f-b0dd-0879b76af109",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"dd4a3f94-5cfe-461f-b0dd-0879b76af109"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "expired paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(404);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({error: \"Paste not found\"}); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/04df12cf-c508-4d91-83a0-0adad6754d4c",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"04df12cf-c508-4d91-83a0-0adad6754d4c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "non-existing-paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(404);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({error: \"Paste not found\"}); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/blubb",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"blubb"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "POST /",
+							"item": [
+								{
+									"name": "full body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal('new paste content', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal('new paste', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // loose checks",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36, 'id length not as expected');",
+													"    pm.expect(responseJson.content).to.equal('new paste content', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal('new paste', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // strict checks",
+													"    const now = new Date().toISOString();",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.created_at, now)).is.equal(true, 'created_at not as expected (' + now + ')');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.updated_at, now)).is.equal(true, 'updated_at not as expected (' + now + ')');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.expiration, '2026-01-31T21:59:35.000Z')).is.equal(true, 'expiration not as expected');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"new paste content\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"new paste\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing content type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"asdf asdf asdf\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid content type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"content_type\": {",
+													"                \"message\": \"Attribute must be one of empty, text/plain, application/json\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content_type\": \"foobar\",\n    \"content\": \"foobar\",\n    \"encoding\": \"UTF-8\",\n    \"expiration\": \"2026-01-01T21:59:35.000Z\",\n    \"title\": \"test \"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing encoding",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"asdf asdf asdf\",\n    \"content_type\": \"text/plain\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid encoding",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"encoding\": {",
+													"                \"message\": \"Attribute must be one of empty, UTF-8\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"asdf asdf asdf\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"foobar\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing expiration",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    ",
+													"    const expiration = new Date();",
+													"    expiration.setHours(expiration.getHours() + 24);",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.expiration, expiration.toISOString()))",
+													"        .is.equal(true, 'expiration not as expected (' + expiration.toISOString() + ')');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"asdf asdf asdf\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid expiration",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"",
+													"    pm.expect(responseJson.error).is.equal('Request body is not valid.', 'error not as expected');",
+													"    pm.expect(responseJson.invalid).is.equal(true, 'invalid not as expected');",
+													"    const messageStart = 'Attribute must be greater than ';",
+													"    pm.expect(responseJson.violations.expiration.message.startsWith(messageStart)).to.equal(true, 'message start not as expected');",
+													"    pm.expect(responseJson.violations.expiration.message.endsWith('.')).to.equal(true, 'message end not as expected');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"",
+													"    pm.expect(responseJson.error).is.equal('Request body is not valid.', 'error not as expected');",
+													"    pm.expect(responseJson.invalid).is.equal(true, 'invalid not as expected');",
+													"    const messageStart = 'Attribute must be greater than ';",
+													"    pm.expect(responseJson.violations.expiration.message.startsWith(messageStart)).to.equal(true, 'message start not as expected');",
+													"    pm.expect(responseJson.violations.expiration.message.endsWith('.')).to.equal(true, 'message end not as expected');",
+													"",
+													"    // check check",
+													"    const now = new Date().toISOString();",
+													"    const message = responseJson.violations.expiration.message;",
+													"    pm.expect(utils.isTimestampSimilar(message.substring(messageStart.length, message.length - 1), now))",
+													"        .is.equal(true, 'expiration ' + responseJson.violations.expiration.message.substring(messageStart.length) + ' not as expected (' + now + ')');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"asdf asdf asdf\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2021-01-31T21:59:35.000Z\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing title",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.title).to.equal('');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"asdf asdf asdf\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid title",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"title\": {",
+													"                \"message\": \"Attribute must be at most 50 characters long.\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content_type\": \"text/plain\",\n    \"content\": \"content\",\n    \"encoding\": \"UTF-8\",\n    \"expiration\": \"2026-01-01T21:59:35.000Z\",\n    \"title\": \"test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title \"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing content",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"content\": {",
+													"                \"message\": \"Attribute is required\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid content",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"content\": {",
+													"                \"message\": \"Attribute must be at most 1048576 characters long.\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const contentThatIsTooLong = new Array(2 * 1024 * 1024 + 1).join('a');",
+													"pm.variables.set(\"contentThatIsTooLong\", contentThatIsTooLong);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"{{contentThatIsTooLong}}\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "multiple invalid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"content_type\": {",
+													"                \"message\": \"Attribute must be one of empty, text/plain, application/json\"",
+													"            },",
+													"            \"encoding\": {",
+													"                \"message\": \"Attribute must be one of empty, UTF-8\"",
+													"            },",
+													"            \"title\": {",
+													"                \"message\": \"Attribute must be at most 50 characters long.\"",
+													"            },",
+													"            \"content\": {",
+													"                \"message\": \"Attribute must be at most 1048576 characters long.\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const contentThatIsTooLong = new Array(2 * 1024 * 1024 + 1).join('a');",
+													"pm.variables.set(\"contentThatIsTooLong\", contentThatIsTooLong);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"{{contentThatIsTooLong}}\",\n    \"content_type\": \"foo\",\n    \"encoding\": \"foo\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title test title\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "DELETE /:access_token",
+							"item": [
+								{
+									"name": "create paste to be deleted",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const responseJson = pm.response.json();",
+													"pm.collectionVariables.set(\"createdPasteAccessToken\", responseJson.access_token);",
+													"pm.collectionVariables.set(\"createdPasteEditToken\", responseJson.edit_token);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"new paste content\",\n    \"content_type\": \"text/plain\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"new paste\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "existing paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    // If this fails, there is previous request that creates a paste, that this request deletes.",
+													"    // Request: POST \"create paste to be deleted\"",
+													"    // Did you run it right before successfully?",
+													"    ",
+													"    pm.response.to.have.status(204);",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "{{createdPasteEditToken}}",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/{{createdPasteAccessToken}}",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"{{createdPasteAccessToken}}"
+											]
+										},
+										"description": "Please note, that this request can only work if the variables createdPasteAccessToken and createdPasteEditToken are set to an existing paste. Once this request was successful, it will not work a second time. To create a paste again and set the variables, run the request \"create paste to be deleted\"."
+									},
+									"response": []
+								},
+								{
+									"name": "invalid edit token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "wrong-token",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/{{createdPasteAccessToken}}",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"{{createdPasteAccessToken}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "inexisting paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "foobar",
+												"type": "default"
+											}
+										],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/1234",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"1234"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing edit token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/1234",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"1234"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "POST /:access_token/fork",
+							"item": [
+								{
+									"name": "existing paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal('blabb\\r\\nblubb\\r\\nblobb\\r\\n', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal('test title', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // loose checks",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal('blabb\\r\\nblubb\\r\\nblobb\\r\\n', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal('test title', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // strict checks",
+													"    const now = new Date().toISOString();",
+													"    const expiration = new Date();",
+													"    expiration.setHours(expiration.getHours() + 24);",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.created_at, now)).is.equal(true, 'created_at not as expected (' + now + ')');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.updated_at, now)).is.equal(true, 'updated_at not as expected (' + now + ')');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.expiration, expiration.toISOString()))",
+													"        .is.equal(true, 'expiration not as expected (' + expiration.toISOString() + ')');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/dd4a3f94-5cfe-461f-b0dd-0879b76af109/fork",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"dd4a3f94-5cfe-461f-b0dd-0879b76af109",
+												"fork"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "inexisting paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(404);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Paste not found\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/does-not-exist/fork",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"does-not-exist",
+												"fork"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with expiration",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal('blabb\\r\\nblubb\\r\\nblobb\\r\\n', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal('test title', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // loose checks",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal('blabb\\r\\nblubb\\r\\nblobb\\r\\n', 'content not as expected');",
+													"    pm.expect(responseJson.content_type).to.equal('text/plain', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal('test title', 'title not as expected');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // strict checks",
+													"    const now = new Date().toISOString();",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.created_at, now)).is.equal(true, 'created_at not as expected (' + now + ')');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.updated_at, now)).is.equal(true, 'updated_at not as expected (' + now + ')');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.expiration, '2026-01-31T21:59:35.000Z')).is.equal(true, 'expiration not as expected');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"expiration\": \"2026-01-31T21:59:35.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/dd4a3f94-5cfe-461f-b0dd-0879b76af109/fork",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"dd4a3f94-5cfe-461f-b0dd-0879b76af109",
+												"fork"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "with invalid expiration",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"",
+													"    pm.expect(responseJson.error).is.equal('Request body is not valid.', 'error not as expected');",
+													"    pm.expect(responseJson.invalid).is.equal(true, 'invalid not as expected');",
+													"    const messageStart = 'Attribute must be greater than ';",
+													"    pm.expect(responseJson.violations.expiration.message.startsWith(messageStart)).to.equal(true, 'message start not as expected');",
+													"    pm.expect(responseJson.violations.expiration.message.endsWith('.')).to.equal(true, 'message end not as expected');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"",
+													"    pm.expect(responseJson.error).is.equal('Request body is not valid.', 'error not as expected');",
+													"    pm.expect(responseJson.invalid).is.equal(true, 'invalid not as expected');",
+													"    const messageStart = 'Attribute must be greater than ';",
+													"    pm.expect(responseJson.violations.expiration.message.startsWith(messageStart)).to.equal(true, 'message start not as expected');",
+													"    pm.expect(responseJson.violations.expiration.message.endsWith('.')).to.equal(true, 'message end not as expected');",
+													"",
+													"    // check check",
+													"    const now = new Date().toISOString();",
+													"    const message = responseJson.violations.expiration.message;",
+													"    pm.expect(utils.isTimestampSimilar(message.substring(messageStart.length, message.length - 1), now))",
+													"        .is.equal(true, 'expiration ' + responseJson.violations.expiration.message.substring(messageStart.length) + ' not as expected (' + now + ')');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"expiration\": \"2021-01-31T21:59:35.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/dd4a3f94-5cfe-461f-b0dd-0879b76af109/fork",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"dd4a3f94-5cfe-461f-b0dd-0879b76af109",
+												"fork"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "PUT /:access_token",
+							"item": [
+								{
+									"name": "existing paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal(pm.variables.get('newContent'), 'content not as expected (' + pm.variables.get('newContent') + ')');",
+													"    pm.expect(responseJson.content_type).to.equal('application/json', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal(pm.variables.get('newTitle'), 'title not as expected (' + pm.variables.get('newTitle') + ')');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // loose checks",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36);",
+													"    pm.expect(responseJson.content).to.equal(pm.variables.get('newContent'), 'content not as expected (' + pm.variables.get('newContent') + ')');",
+													"    pm.expect(responseJson.content_type).to.equal('application/json', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal(pm.variables.get('newTitle'), 'title not as expected (' + pm.variables.get('newTitle') + ')');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // strict checks",
+													"    const now = new Date().toISOString();",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.updated_at, now)).is.equal(true, 'updated_at not as expected (' + now + ')');",
+													"});",
+													"",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const newContent = pm.variables.replaceIn('{{$randomUserAgent}}');",
+													"const newTitle = pm.variables.replaceIn('{{$randomJobArea}}');",
+													"",
+													"pm.variables.set('newContent', newContent);",
+													"pm.variables.set('newTitle', newTitle);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "c0f32e2f-36d4-4ea5-ba49-f1b32860d972",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"{{newContent}}\",\n    \"content_type\": \"application/json\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"{{newTitle}}\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing content",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(400);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Request body is not valid.\",",
+													"        \"invalid\": true,",
+													"        \"violations\": {",
+													"            \"content\": {",
+													"                \"message\": \"Attribute is required\"",
+													"            }",
+													"        }",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const newContent = pm.variables.replaceIn('{{$randomUserAgent}}');",
+													"const newTitle = pm.variables.replaceIn('{{$randomJobArea}}');",
+													"",
+													"pm.variables.set('newContent', newContent);",
+													"pm.variables.set('newTitle', newTitle);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "c0f32e2f-36d4-4ea5-ba49-f1b32860d972",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content_type\": \"application/json\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"{{newTitle}}\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "read paste before PUT",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set('previousTitle', pm.response.json().title);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "missing title not removed",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test('response', () => {",
+													"    // If this fails, the previous request that reads the previous title of a paste, was likely not executed or failed.",
+													"    // Request: GET \"read paste before PUT\"",
+													"    // Did you run it right before successfully?",
+													"    ",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36, 'id length not as expected');",
+													"    pm.expect(responseJson.content).to.equal(pm.variables.get('newContent'), 'content not as expected (' + pm.variables.get('newContent') + ')');",
+													"    pm.expect(responseJson.content_type).to.equal('application/json', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title)",
+													"        .to.equal(pm.collectionVariables.get('previousTitle'), 'title not as expected (' + pm.collectionVariables.get('previousTitle') + ')');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const newContent = pm.variables.replaceIn('{{$randomUserAgent}}');",
+													"",
+													"pm.variables.set('newContent', newContent);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "c0f32e2f-36d4-4ea5-ba49-f1b32860d972",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"{{newContent}}\",\n    \"content_type\": \"application/json\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid edit token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "foo-bar",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"bar2\",\n    \"expiration\": \"2022-02-13T13:20:42.894Z\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "inexisting paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "b665935e-90eb-47cc-8378-72b7b5b02705",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"bar2\",\n    \"expiration\": 1644758442894\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/foo-bar",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"foo-bar"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "PATCH /:access_token",
+							"item": [
+								{
+									"name": "existing paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test('response loose', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36, 'id length not as expected');",
+													"    pm.expect(responseJson.content).to.equal(pm.variables.get('newContent'), 'content not as expected (' + pm.variables.get('newContent') + ')');",
+													"    pm.expect(responseJson.content_type).to.equal('application/json', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal(pm.variables.get('newTitle'), 'title not as expected (' + pm.variables.get('newTitle') + ')');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // loose checks",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"    pm.expect(responseJson).to.have.own.property('expiration');",
+													"});",
+													"pm.test('response strict', () => {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36, 'id length not as expected');",
+													"    pm.expect(responseJson.content).to.equal(pm.variables.get('newContent'), 'content not as expected (' + pm.variables.get('newContent') + ')');",
+													"    pm.expect(responseJson.content_type).to.equal('application/json', 'content_type not as expected');",
+													"    pm.expect(responseJson.encoding).to.equal('UTF-8', 'encoding not as expected');",
+													"    pm.expect(responseJson.title).to.equal(pm.variables.get('newTitle'), 'title not as expected (' + pm.variables.get('newTitle') + ')');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    // strict checks",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.created_at, '2022-01-07T21:59:35.000Z')).is.equal(true, 'updated_at not as expected');",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.expiration, '2026-01-31T21:59:35.000Z')).is.equal(true, 'updated_at not as expected');",
+													"    const now = new Date().toISOString();",
+													"    pm.expect(utils.isTimestampSimilar(responseJson.updated_at, now)).is.equal(true, 'updated_at not as expected (' + now + ')');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const newContent = pm.variables.replaceIn('{{$randomUserAgent}}');",
+													"const newTitle = pm.variables.replaceIn('{{$randomJobArea}}');",
+													"",
+													"pm.variables.set('newContent', newContent);",
+													"pm.variables.set('newTitle', newTitle);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "c0f32e2f-36d4-4ea5-ba49-f1b32860d972",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"{{newContent}}\",\n    \"content_type\": \"application/json\",\n    \"encoding\": \"utf-8\",\n    \"expiration\": \"2026-01-31T21:59:35.000Z\",\n    \"title\": \"{{newTitle}}\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "read paste before PATCH",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const paste = pm.response.json();",
+													"pm.collectionVariables.set('previousTitle', paste.title);",
+													"pm.collectionVariables.set('previousContent', paste.content);",
+													"pm.collectionVariables.set('previousContentType', paste.content_type);",
+													"pm.collectionVariables.set('previousEncoding', paste.encoding);",
+													"pm.collectionVariables.set('previousExpiration', paste.expiration);",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "empty body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													"pm.test('response', () => {",
+													"    // If this fails, the previous request that reads the previous properties of a paste, was likely not executed or failed.",
+													"    // Request: GET \"read paste before PATCH\"",
+													"    // Did you run it right before successfully?",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.id).to.have.lengthOf(36, 'id length not as expected');",
+													"    pm.expect(responseJson.content)",
+													"        .to.equal(pm.collectionVariables.get('previousContent'), ",
+													"            'content not as expected (' + pm.collectionVariables.get('previousContent') + ')');",
+													"    pm.expect(responseJson.content_type)",
+													"        .to.equal(pm.collectionVariables.get('previousContentType'), ",
+													"            'content_type not as expected (' + pm.collectionVariables.get('previousContentType') + ')');",
+													"    pm.expect(responseJson.encoding)",
+													"        .to.equal(pm.collectionVariables.get('previousEncoding'), ",
+													"            'encoding not as expected (' + pm.collectionVariables.get('previousEncoding') + ')');",
+													"    pm.expect(responseJson.expiration)",
+													"        .to.equal(pm.collectionVariables.get('previousExpiration'), ",
+													"            'expiration not as expected (' + pm.collectionVariables.get('previousExpiration') + ')');",
+													"    pm.expect(responseJson.title)",
+													"        .to.equal(pm.collectionVariables.get('previousTitle'), ",
+													"            'title not as expected (' + pm.collectionVariables.get('previousTitle') + ')');",
+													"    pm.expect(responseJson.access_token).to.have.lengthOf(36, 'access_token length not as expected');",
+													"    pm.expect(responseJson.edit_token).to.have.lengthOf(36, 'edit_token length not as expected');",
+													"",
+													"    pm.expect(responseJson).to.have.own.property('created_at');",
+													"    pm.expect(responseJson).to.have.own.property('updated_at');",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "c0f32e2f-36d4-4ea5-ba49-f1b32860d972",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "invalid edit token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "foo-bar",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"bar2\",\n    \"expiration\": 1644758442894\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/a8fce094-4c6d-4f04-8588-d35d087c4432",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"a8fce094-4c6d-4f04-8588-d35d087c4432"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "inexisting paste",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test('status', () => {",
+													"    pm.response.to.have.status(401);",
+													"});",
+													"pm.test('response', () => {",
+													"    pm.expect(pm.response.json()).is.to.eql({",
+													"        \"error\": \"Edit token does not match. Please specify the header X-PASTE-EDIT-TOKEN.\"",
+													"    }); ",
+													"});",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "X-PASTE-EDIT-TOKEN",
+												"value": "b665935e-90eb-47cc-8378-72b7b5b02705",
+												"type": "default"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"content\": \"bar2\",\n    \"expiration\": 1644758442894\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BASE_URL}}/api/paste/foo-bar",
+											"host": [
+												"{{BASE_URL}}"
+											],
+											"path": [
+												"api",
+												"paste",
+												"foo-bar"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"utils = {",
+					"    /**",
+					"     * Compares two timestamps and checks if they are loosley similar.",
+					"     */",
+					"    isTimestampSimilar: (a, b) => {",
+					"        if (typeof a !== \"string\" || typeof b !== \"string\") {",
+					"            return false;",
+					"        }",
+					"",
+					"        const aDate = new Date(a);",
+					"        const bDate = new Date(b);",
+					"",
+					"        // check if dates can be parsed",
+					"        if (isNaN(aDate.getTime()) || isNaN(bDate.getTime())) {",
+					"            return false;",
+					"        }",
+					"",
+					"        const diffInMillis = Math.abs(aDate.getTime() - bDate.getTime());",
+					"",
+					"        const oneMinuteInMillis = 60 * 1000;",
+					"        const oneHourInMillis = 60 * oneMinuteInMillis;",
+					"        const twoHoursInMillis = 2 * oneHourInMillis;",
+					"",
+					"        // diff within 1 minute",
+					"        if (diffInMillis < oneMinuteInMillis) {",
+					"            return true;",
+					"        }",
+					"",
+					"        // timezone difference of 1h (daylight saving time in Switzerland)",
+					"        if (",
+					"            diffInMillis >= oneHourInMillis - oneMinuteInMillis &&",
+					"            diffInMillis <= oneHourInMillis + oneMinuteInMillis",
+					"        ) {",
+					"            return true;",
+					"        }",
+					"",
+					"        // timezone difference of 2h (summer time in Switzerland)",
+					"        if (",
+					"            diffInMillis >= twoHoursInMillis - oneMinuteInMillis &&",
+					"            diffInMillis <= twoHoursInMillis + oneMinuteInMillis",
+					"        ) {",
+					"            return true;",
+					"        }",
+					"",
+					"        return false;",
+					"    }",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "createdPasteAccessToken",
+			"value": ""
+		},
+		{
+			"key": "createdPasteEditToken",
+			"value": ""
+		},
+		{
+			"key": "newTitle",
+			"value": ""
+		},
+		{
+			"key": "previousTitle",
+			"value": ""
+		},
+		{
+			"key": "previousContent",
+			"value": ""
+		},
+		{
+			"key": "previousContentType",
+			"value": ""
+		},
+		{
+			"key": "previousEncoding",
+			"value": ""
+		},
+		{
+			"key": "previousExpiration",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,17 @@
+/* Foglio di stile condiviso di AthliTrack (tiene ordinati i file FXML). */
+.view {
+    -fx-padding: 10;
+}
+.view-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+.stats-label {
+    -fx-font-size: 13px;
+}
+.error-label {
+    -fx-text-fill: #c0392b;
+}
+.hint-label {
+    -fx-text-fill: gray;
+}

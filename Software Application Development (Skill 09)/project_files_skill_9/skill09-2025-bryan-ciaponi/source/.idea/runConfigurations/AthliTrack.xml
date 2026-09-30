@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Avvia l'app da IntelliJ: tasto Run verde oppure Maiusc+F10.
+       Usa il modulo Maven "athlitrack" (creato importando pom.xml). -->
+  <configuration default="false" name="AthliTrack" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="athlitrack.Main" />
+    <module name="athlitrack" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<!-- "Aggiungi workout" / "Modifica workout ...": intestazione + esercizi e serie. -->
+<!-- A sinistra la lista esercizi, a destra la tabella serie di quello selezionato. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="athlitrack.controller.WorkoutEditorController"
+      spacing="8" styleClass="view" stylesheets="@app.css">
+    <Label fx:id="title" text="Add workout" styleClass="view-title"/>
+    <HBox spacing="8">
+        <Label text="Name:"/>
+        <TextField fx:id="nameField" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <HBox spacing="8">
+        <Label text="Start:"/>
+        <DatePicker fx:id="startDate"/>
+        <TextField fx:id="startTime" promptText="HH:mm" prefWidth="80"/>
+    </HBox>
+    <HBox spacing="8">
+        <Label text="End:  "/>
+        <DatePicker fx:id="endDate"/>
+        <TextField fx:id="endTime" promptText="HH:mm" prefWidth="80"/>
+        <Button text="Now + 1h" onAction="#onFillNow"/>
+    </HBox>
+    <Label text="Time format HH:mm, e.g. 18:30" styleClass="hint-label"/>
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+        <VBox spacing="6" prefWidth="280">
+            <Label text="Exercises"/>
+            <ListView fx:id="exerciseList" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="6">
+                <ComboBox fx:id="exerciseBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Button text="Add" onAction="#onAddExercise"/>
+            </HBox>
+            <HBox spacing="6">
+                <Button text="Remove" onAction="#onRemoveExercise"/>
+                <Button text="Up" onAction="#onMoveUp"/>
+                <Button text="Down" onAction="#onMoveDown"/>
+            </HBox>
+        </VBox>
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="Sets of selected exercise"/>
+            <TableView fx:id="setsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="setColumn" text="Set" prefWidth="60"/>
+                    <TableColumn fx:id="weightColumn" text="Weight (kg)" prefWidth="120"/>
+                    <TableColumn fx:id="repsColumn" text="Reps" prefWidth="100"/>
+                </columns>
+            </TableView>
+            <HBox spacing="6">
+                <Label text="Weight (kg):"/>
+                <TextField fx:id="weightField" prefWidth="80"/>
+                <Label text="Reps:"/>
+                <TextField fx:id="repsField" prefWidth="80"/>
+            </HBox>
+            <HBox spacing="6">
+                <Button text="Add set" onAction="#onAddSet"/>
+                <Button text="Update set" onAction="#onUpdateSet"/>
+                <Button text="Delete set" onAction="#onDeleteSet"/>
+            </HBox>
+            <Label text="Tip: new sets are added by filling weight/reps and pressing 'Add set'. Sets are numbered automatically."
+                   wrapText="true" styleClass="hint-label"/>
+        </VBox>
+    </HBox>
+    <Label fx:id="error" styleClass="error-label" wrapText="true"/>
+    <HBox spacing="8">
+        <Button text="Save" defaultButton="true" onAction="#onSave"/>
+        <Button text="Cancel" cancelButton="true" onAction="#onCancel"/>
+    </HBox>
+</VBox>
